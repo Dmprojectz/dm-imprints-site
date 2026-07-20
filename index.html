@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DM Imprints | New York City Photographer</title>
+  <meta name="description" content="DM Imprints is a New York City photographer specializing in candid, natural-light portraits, weddings, events and brand work. Real people, real moments — no stiff poses." />
+  <meta name="author" content="DM Imprints" />
+  <meta name="theme-color" content="#0a0a0a" />
+  <link rel="canonical" href="https://dmimprints.github.io/" />
+
+  <!-- Social sharing preview -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="DM Imprints | New York City Photographer" />
+  <meta property="og:description" content="Candid, natural-light photography in New York City. Real people, real moments — no stiff poses." />
+  <meta property="og:image" content="https://dmimprints.github.io/images/og-image.jpg" />
+  <meta property="og:url" content="https://dmimprints.github.io/" />
+  <meta property="og:site_name" content="DM Imprints" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="DM Imprints | New York City Photographer" />
+  <meta name="twitter:description" content="Candid, natural-light photography in New York City. Real people, real moments — no stiff poses." />
+  <meta name="twitter:image" content="https://dmimprints.github.io/images/og-image.jpg" />
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root { --black: #0a0a0a; --white: #f5f5f5; --accent: #C9A96E; --grey: #1a1a1a; --mid: #888; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: var(--black); color: var(--white); overflow-x: hidden; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 1.4rem 3rem; background: rgba(10,10,10,0.85); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .nav-logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.7rem; letter-spacing: 0.12em; color: var(--white); text-decoration: none; }
+    .nav-logo span { color: var(--accent); }
+    .nav-links { display: flex; gap: 2.2rem; list-style: none; }
+    .nav-links a { text-decoration: none; color: var(--mid); font-size: 0.78rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--white); }
+    .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: flex-end; padding: 0 3rem 5rem; position: relative; background: linear-gradient(160deg, #111 0%, #0a0a0a 100%); overflow: hidden; }
+    .hero-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px); background-size: 60px 60px; }
+    .hero-accent-bar { position: absolute; top: 0; left: 3rem; width: 2px; height: 40%; background: var(--accent); }
+    .hero-tag { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; }
+    .hero h1 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(4rem, 11vw, 10rem); line-height: 0.92; letter-spacing: 0.02em; color: var(--white); position: relative; }
+    .hero h1 .outline { -webkit-text-stroke: 1.5px var(--white); color: transparent; }
+    .hero-sub { margin-top: 1.8rem; font-size: 1rem; color: var(--mid); max-width: 440px; line-height: 1.7; font-weight: 300; }
+    .hero-cta { margin-top: 2.5rem; display: inline-flex; align-items: center; gap: 0.8rem; background: var(--accent); color: var(--black); text-decoration: none; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; padding: 1rem 2rem; transition: background 0.2s, transform 0.2s; }
+    .hero-cta:hover { background: #a8863d; transform: translateY(-2px); }
+    .hero-scroll { position: absolute; bottom: 2.5rem; right: 3rem; display: flex; flex-direction: column; align-items: center; gap: 0.4rem; color: var(--mid); font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; }
+    .scroll-line { width: 1px; height: 50px; background: linear-gradient(to bottom, var(--mid), transparent); }
+    section { padding: 7rem 3rem; }
+    .section-label { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.2rem; }
+    .section-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.5rem, 5vw, 4.5rem); line-height: 1; letter-spacing: 0.04em; color: var(--white); }
+    #about { background: var(--grey); display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+    .about-text p { color: rgba(245,245,245,0.7); font-size: 1rem; line-height: 1.85; margin-top: 1.8rem; font-weight: 300; }
+    .about-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 3rem; }
+    .stat-box { border-left: 2px solid var(--accent); padding-left: 1.2rem; }
+    .stat-number { font-family: 'Bebas Neue', sans-serif; font-size: 3rem; color: var(--white); line-height: 1; }
+    .stat-label { font-size: 0.72rem; color: var(--mid); letter-spacing: 0.1em; text-transform: uppercase; margin-top: 0.3rem; }
+    .about-image-block { position: relative; }
+    .about-img-placeholder { width: 100%; aspect-ratio: 4/5; background: #222; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.8rem; color: var(--mid); font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; border: 1px dashed #333; }
+    .about-img-placeholder svg { width: 36px; height: 36px; stroke: var(--mid); fill: none; }
+    .about-img-accent { position: absolute; bottom: -1.5rem; right: -1.5rem; width: 60%; aspect-ratio: 1; background: var(--accent); opacity: 0.08; z-index: -1; }
+    #work { background: var(--black); }
+    .work-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 3rem; }
+    .work-note { font-size: 0.8rem; color: var(--mid); max-width: 280px; line-height: 1.6; text-align: right; }
+    .gallery { display: grid; grid-template-columns: repeat(12, 1fr); gap: 12px; }
+    .photo-card { background: #181818; overflow: hidden; position: relative; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: transform 0.25s; }
+    .photo-card:hover { transform: scale(0.98); }
+    .photo-card:hover .photo-overlay { opacity: 1; }
+    .photo-card:nth-child(1) { grid-column: span 5; aspect-ratio: 4/5; }
+    .photo-card:nth-child(2) { grid-column: span 4; aspect-ratio: 1; }
+    .photo-card:nth-child(3) { grid-column: span 3; aspect-ratio: 3/4; }
+    .photo-card:nth-child(4) { grid-column: span 3; aspect-ratio: 3/4; }
+    .photo-card:nth-child(5) { grid-column: span 4; aspect-ratio: 3/4; }
+    .photo-card:nth-child(6) { grid-column: span 5; aspect-ratio: 4/5; }
+    .photo-card:nth-child(7) { grid-column: span 4; aspect-ratio: 3/4; }
+    .photo-card:nth-child(8) { grid-column: span 5; aspect-ratio: 3/4; }
+    .photo-card:nth-child(9) { grid-column: span 3; aspect-ratio: 3/4; }
+    .photo-overlay { position: absolute; inset: 0; background: rgba(201,169,110,0.1); opacity: 0; transition: opacity 0.25s; }
+    #book { background: var(--grey); display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+    .book-intro p { color: rgba(245,245,245,0.65); font-size: 0.95rem; line-height: 1.85; margin-top: 1.5rem; font-weight: 300; }
+    .contact-info { margin-top: 2.8rem; display: flex; flex-direction: column; gap: 1.2rem; }
+    .contact-item { display: flex; align-items: center; gap: 1rem; }
+    .contact-icon { width: 40px; height: 40px; border: 1px solid #333; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .contact-icon svg { width: 16px; height: 16px; stroke: var(--accent); fill: none; }
+    .contact-item-label { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--mid); margin-bottom: 0.15rem; }
+    .contact-item-value { font-size: 0.9rem; color: var(--white); font-weight: 400; text-decoration: none; }
+    .contact-item-value:hover { color: var(--accent); }
+    .booking-tabs { display: flex; gap: 0; margin-bottom: 2rem; border: 1px solid #2a2a2a; }
+    .booking-tab { flex: 1; padding: 0.85rem 1rem; background: #111; color: var(--mid); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; border: none; cursor: pointer; transition: all 0.2s; font-family: 'Inter', sans-serif; }
+    .booking-tab.active { background: var(--accent); color: var(--black); }
+    .booking-tab:hover:not(.active) { color: var(--white); }
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+    .book-form { display: flex; flex-direction: column; gap: 1.2rem; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+    .form-group { display: flex; flex-direction: column; gap: 0.5rem; }
+    .form-group label { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--mid); }
+    .form-group input, .form-group select, .form-group textarea { background: #111; border: 1px solid #2a2a2a; color: var(--white); padding: 0.85rem 1rem; font-family: 'Inter', sans-serif; font-size: 0.88rem; outline: none; transition: border-color 0.2s; width: 100%; appearance: none; }
+    .form-group select option { background: #111; }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--accent); }
+    /* the shared "appearance: none" above strips the native calendar button off
+       date inputs, and the icon renders near-black on a #111 field. Restore and invert it. */
+    .form-group input[type="date"] { appearance: auto; -webkit-appearance: none; cursor: pointer; }
+    .form-group input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.85); opacity: 0.65; cursor: pointer; transition: opacity 0.2s; }
+    .form-group input[type="date"]:hover::-webkit-calendar-picker-indicator { opacity: 1; }
+    .form-group input[type="date"]::-webkit-datetime-edit { color: var(--white); }
+    .form-group textarea { resize: vertical; min-height: 110px; }
+    .form-submit { background: var(--accent); color: var(--black); border: none; padding: 1rem 2rem; font-family: 'Inter', sans-serif; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; cursor: pointer; transition: background 0.2s, transform 0.2s; width: 100%; margin-top: 0.4rem; }
+    .form-submit:hover { background: #a8863d; transform: translateY(-2px); }
+    .form-success { display: none; background: rgba(201,169,110,0.1); border: 1px solid var(--accent); padding: 1.2rem 1.5rem; color: var(--white); font-size: 0.88rem; line-height: 1.6; margin-top: 0.5rem; }
+    footer { background: #050505; border-top: 1px solid #1a1a1a; padding: 2.5rem 3rem; display: flex; justify-content: space-between; align-items: center; }
+    .footer-logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; letter-spacing: 0.12em; color: var(--white); }
+    .footer-logo span { color: var(--accent); }
+    .footer-copy { font-size: 0.72rem; color: var(--mid); letter-spacing: 0.08em; }
+    .hidden-field { display: none; }
+    .form-error { display: none; background: rgba(200,80,80,0.08); border: 1px solid #7a3a3a; padding: 1.2rem 1.5rem; color: var(--white); font-size: 0.88rem; line-height: 1.6; margin-top: 0.5rem; }
+    .form-error a { color: var(--accent); }
+    .form-submit:disabled { opacity: 0.55; cursor: not-allowed; transform: none; }
+    .photo-card img, .photo-card picture { width: 100%; height: 100%; }
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+    }
+    @media (max-width: 900px) {
+      nav { padding: 1.2rem 1.5rem; } .nav-links { gap: 1.4rem; } section { padding: 5rem 1.5rem; }
+      .hero { padding: 0 1.5rem 4rem; } .hero-accent-bar { left: 1.5rem; } .hero-scroll { right: 1.5rem; }
+      #about, #book { grid-template-columns: 1fr; gap: 3rem; } .about-image-block { order: -1; }
+      .work-header { flex-direction: column; align-items: flex-start; gap: 1rem; } .work-note { text-align: left; }
+      .gallery { grid-template-columns: repeat(2, 1fr); }
+      .photo-card { grid-column: span 1 !important; aspect-ratio: 3/4 !important; }
+      footer { flex-direction: column; gap: 1rem; text-align: center; } .form-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a class="nav-logo" href="#"><span>DM</span> IMPRINTS</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#book">Book</a></li>
+    </ul>
+  </nav>
+  <section class="hero" id="home">
+    <div class="hero-grid"></div>
+    <div class="hero-accent-bar"></div>
+    <div class="hero-tag">New York City Photographer</div>
+    <h1>STOLEN<br /><span class="outline">MOMENTS.</span></h1>
+    <p class="hero-sub">The best photos aren't posed. They're stolen from real moments — a nervous laugh, a kid chasing pigeons, the quiet chaos of a Brooklyn shoot.</p>
+    <a class="hero-cta" href="#work">
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      View My Work
+    </a>
+    <div class="hero-scroll"><div class="scroll-line"></div>Scroll</div>
+  </section>
+  <section id="about">
+    <div class="about-text">
+      <div class="section-label">About</div>
+      <h2 class="section-title">REAL PEOPLE.<br />REAL MOMENTS.</h2>
+      <p>I'm Danny, a New York–based photographer who believes the best photos aren't posed—they're taken from real moments.</p>
+      <p style="margin-top:1rem;">My style is true to life: natural light, genuine expressions, and images that feel exactly like the moment did when you were living it. I focus on capturing energy, not just visuals—whether it's portraits, nightlife, or everyday moments that deserve to be remembered.</p>
+      <p style="margin-top:1rem;">Every shoot is about creating something real, effortless, and worth coming back to.</p>
+      <div class="about-stats">
+        <div class="stat-box"><div class="stat-number">NYC</div><div class="stat-label">Based & Beyond</div></div>
+        <div class="stat-box"><div class="stat-number">100%</div><div class="stat-label">Natural Light</div></div>
+        <div class="stat-box"><div class="stat-number">Real</div><div class="stat-label">No Stiff Poses</div></div>
+      </div>
+    </div>
+    <div class="about-image-block">
+      <picture>
+        <source srcset="images/danny-portrait.webp" type="image/webp" />
+        <img src="images/danny-portrait.jpg" alt="Danny, New York City photographer and founder of DM Imprints" width="1010" height="1400" style="width:100%;aspect-ratio:4/5;object-fit:cover;display:block;" />
+      </picture>
+      <div class="about-img-accent"></div>
+    </div>
+  </section>
+  <section id="work">
+    <div class="work-header">
+      <div><div class="section-label">Portfolio</div><h2 class="section-title">THE WORK</h2></div>
+      <p class="work-note">New York City & Beyond</p>
+    </div>
+    <div class="gallery">
+      <div class="photo-card">
+        <picture>
+          <source srcset="images/work-01.webp" type="image/webp" />
+          <img src="images/work-01.jpg" alt="Candid New York City street portrait by DM Imprints" width="1200" height="702" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;" />
+        </picture>
+        <div class="photo-overlay"></div>
+      </div>
+      <div class="photo-card">
+        <picture>
+          <source srcset="images/work-02.webp" type="image/webp" />
+          <img src="images/work-02.jpg" alt="Natural light portrait session in New York City" width="987" height="1400" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;" />
+        </picture>
+        <div class="photo-overlay"></div>
+      </div>
+      <div class="photo-card">
+        <picture>
+          <source srcset="images/work-03.webp" type="image/webp" />
+          <img src="images/work-03.jpg" alt="Real moment captured on a New York City photo session" width="1010" height="1400" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;" />
+        </picture>
+        <div class="photo-overlay"></div>
+      </div>
+      <div class="photo-card">
+        <picture>
+          <source srcset="images/work-04.webp" type="image/webp" />
+          <img src="images/work-04.jpg" alt="Rider leaning over his white sportbike on a New York City street at night" width="933" height="1400" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;" />
+        </picture>
+        <div class="photo-overlay"></div>
+      </div>
+      <div class="photo-card">
+        <picture>
+          <source srcset="images/work-05.webp" type="image/webp" />
+          <img src="images/work-05.jpg" alt="Rider and three motorcycles lit by headlight glow on a New York City street at night" width="933" height="1400" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;" />
+        </picture>
+        <div class="photo-overlay"></div>
+      </div>
+      <div class="photo-card">
+        <picture>
+          <source srcset="images/work-06.webp" type="image/webp" />
+          <img src="images/work-06.jpg" alt="Blue flame from a motorcycle exhaust as the rider revs at night in New York City" width="933" height="1400" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;" />
+        </picture>
+        <div class="photo-overlay"></div>
+      </div>
+      <div class="photo-card">
+        <picture>
+          <source srcset="images/work-07.webp" type="image/webp" />
+          <img src="images/work-07.jpg" alt="Natural light outdoor portrait on a boardwalk, captured by DM Imprints" width="933" height="1400" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;" />
+        </picture>
+        <div class="photo-overlay"></div>
+      </div>
+      <div class="photo-card">
+        <picture>
+          <source srcset="images/work-08.webp" type="image/webp" />
+          <img src="images/work-08.jpg" alt="Graduate celebrating on a boardwalk in cap and sashes, natural light portrait" width="933" height="1400" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;" />
+        </picture>
+        <div class="photo-overlay"></div>
+      </div>
+      <div class="photo-card">
+        <picture>
+          <source srcset="images/work-09.webp" type="image/webp" />
+          <img src="images/work-09.jpg" alt="Graduate in cap and gown leaning on a boardwalk railing by the water, natural light portrait" width="933" height="1400" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;" />
+        </picture>
+        <div class="photo-overlay"></div>
+      </div>
+    </div>
+  </section>
+  <section id="book">
+    <div class="book-intro">
+      <div class="section-label">Book a Session</div>
+      <h2 class="section-title">LET'S<br />SHOOT.</h2>
+      <p>Ready to capture something real? Fill out the form and I'll get back to you within 24 hours to confirm your session details and talk about what you have in mind.</p>
+      <div class="contact-info">
+        <div class="contact-item">
+          <div class="contact-icon"><svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+          <div><div class="contact-item-label">Email</div><a class="contact-item-value" href="mailto:dmprojectz24@gmail.com">dmprojectz24@gmail.com</a></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon"><svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.09-1.09a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+          <div><div class="contact-item-label">Phone</div><a class="contact-item-value" href="tel:9296304038">929-630-4038</a></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon"><svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div><div class="contact-item-label">Location</div><span class="contact-item-value">New York City & Beyond</span></div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="booking-tabs">
+        <button class="booking-tab active" onclick="switchTab(event, 'tab-form')">Send a Request</button>
+        <button class="booking-tab" onclick="switchTab(event, 'tab-schedule')">Schedule a Meeting</button>
+      </div>
+
+      <div id="tab-form" class="tab-panel active">
+    <form class="book-form" id="booking-form" novalidate>
+      <p class="hidden-field" aria-hidden="true"><label>Leave this blank: <input name="bot-field" tabindex="-1" autocomplete="off" /></label></p>
+      <div class="form-row">
+        <div class="form-group"><label>First Name</label><input type="text" name="first_name" placeholder="Your name" required /></div>
+        <div class="form-group"><label>Last Name</label><input type="text" name="last_name" placeholder="Last name" required /></div>
+      </div>
+      <div class="form-group"><label>Email Address</label><input type="email" name="email" placeholder="you@example.com" required /></div>
+      <div class="form-group"><label>Phone Number</label><input type="tel" name="phone" placeholder="(555) 000-0000" /></div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Session Type</label>
+          <select name="session_type" required>
+            <option value="" disabled selected>Select a type</option>
+            <option>Portrait</option>
+            <option>Wedding / Engagement</option>
+            <option>Brand / Commercial</option>
+            <option>Event</option>
+            <option>Family</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Preferred Day</label>
+          <select name="preferred_day" required>
+            <option value="" disabled selected>Select a day</option>
+            <option>Saturday</option>
+            <option>Sunday</option>
+            <option>Weekday Afternoon</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Preferred Date</label>
+        <input type="date" name="preferred_date" required />
+      </div>
+      <div class="form-group"><label>Tell Me About Your Vision</label><textarea name="message" placeholder="What are you looking for? Any ideas, locations, or details..."></textarea></div>
+      <button type="submit" class="form-submit" id="submit-btn">Send Booking Request →</button>
+      <div class="form-success" id="form-success">
+        <strong>Request sent.</strong> Thanks — I'll get back to you within 24 hours to confirm the details.
+      </div>
+      <div class="form-error" id="form-error">
+        Something went wrong sending that. Please email me directly at
+        <a href="mailto:dmprojectz24@gmail.com">dmprojectz24@gmail.com</a> or call 929-630-4038.
+      </div>
+    </form>
+      </div>
+
+      <div id="tab-schedule" class="tab-panel">
+        <iframe
+          src="https://cal.com/dm-imprints?embed=true&layout=month_view&timezone=America%2FNew_York&hideTimeZoneSelector=true&brandColor=%23C9A96E"
+          width="100%"
+          height="650"
+          frameborder="0"
+          style="border:1px solid #2a2a2a; min-height:650px; display:block;">
+        </iframe>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <div class="footer-logo"><span>DM</span> IMPRINTS</div>
+    <div class="footer-copy">© 2026 DM Imprints · New York City Photographer · All rights reserved</div>
+  </footer>
+  <script>
+    /* ------------------------------------------------------------------
+       PASTE YOUR GOOGLE APPS SCRIPT WEB APP URL BETWEEN THE QUOTES BELOW.
+       Setup instructions are in SETUP-GOOGLE-SHEET.md
+       It will look like:
+       https://script.google.com/macros/s/AKfycb.....................  /exec
+    ------------------------------------------------------------------- */
+    const SHEET_ENDPOINT = "https://script.google.com/macros/s/AKfycbziGpahtGP6MaUWP3yceBfkUp7JJ9utgFJJkxSqKTlx0kQ_yG2REpVfaCL0q0M6KSjTDg/exec";
+
+    const form    = document.getElementById('booking-form');
+    const btn     = document.getElementById('submit-btn');
+    const okBox   = document.getElementById('form-success');
+    const errBox  = document.getElementById('form-error');
+
+    form.addEventListener('submit', async function (ev) {
+      ev.preventDefault();
+      okBox.style.display = 'none';
+      errBox.style.display = 'none';
+
+      // honeypot: bots fill hidden fields, humans never see them
+      if (form.elements['bot-field'].value !== '') return;
+
+      if (!form.checkValidity()) { form.reportValidity(); return; }
+
+      if (SHEET_ENDPOINT.indexOf('script.google.com') === -1) {
+        errBox.innerHTML = 'This form is not connected yet. See SETUP-GOOGLE-SHEET.md.';
+        errBox.style.display = 'block';
+        return;
+      }
+
+      btn.disabled = true;
+      btn.textContent = 'Sending...';
+
+      try {
+        await fetch(SHEET_ENDPOINT, {
+          method: 'POST',
+          mode: 'no-cors',
+          body: new FormData(form)
+        });
+        form.reset();
+        okBox.style.display = 'block';
+        btn.textContent = 'Sent ✓';
+        okBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        setTimeout(function () {
+          btn.disabled = false;
+          btn.textContent = 'Send Booking Request →';
+        }, 4000);
+      } catch (err) {
+        errBox.style.display = 'block';
+        btn.disabled = false;
+        btn.textContent = 'Send Booking Request →';
+      }
+    });
+
+    function switchTab(e, tabId) {
+      document.querySelectorAll('.booking-tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+      e.currentTarget.classList.add('active');
+      document.getElementById(tabId).classList.add('active');
+    }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "DM Imprints",
+    "description": "Candid, natural-light photography in New York City.",
+    "url": "https://dmimprints.github.io/",
+    "email": "dmprojectz24@gmail.com",
+    "telephone": "+1-929-630-4038",
+    "areaServed": "New York City",
+    "address": { "@type": "PostalAddress", "addressLocality": "New York", "addressRegion": "NY", "addressCountry": "US" }
+  }
+  </script>
+</body>
+</html>

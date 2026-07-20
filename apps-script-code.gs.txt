@@ -1,0 +1,89 @@
+/**
+ * DM Imprints — booking form handler
+ * Receives booking requests from the website, appends them to this spreadsheet,
+ * and emails you a copy so you don't have to keep the sheet open.
+ *
+ * Paste this whole file into Extensions > Apps Script in your Google Sheet.
+ * Full instructions: SETUP-GOOGLE-SHEET.md
+ */
+
+// Change this if you ever want notifications sent somewhere else.
+var NOTIFY_EMAIL = 'dmprojectz24@gmail.com';
+
+function doPost(e) {
+  var lock = LockService.getScriptLock();
+  lock.waitLock(20000); // stops simultaneous submissions overwriting a row
+
+  try {
+    var ss = SpreadsheetApp.getActiveSpreadsheet();
+    var sheet = ss.getSheetByName('Bookings');
+
+    // First run: create the tab and write the header row.
+    if (!sheet) {
+      sheet = ss.insertSheet('Bookings');
+      sheet.appendRow([
+        'Received', 'First Name', 'Last Name', 'Email', 'Phone',
+        'Session Type', 'Preferred Day', 'Preferred Date', 'Vision / Notes', 'Status'
+      ]);
+      sheet.getRange(1, 1, 1, 10)
+           .setFontWeight('bold')
+           .setBackground('#0a0a0a')
+           .setFontColor('#C9A96E');
+      sheet.setFrozenRows(1);
+      sheet.setColumnWidth(9, 400);
+    }
+
+    var p = (e && e.parameter) ? e.parameter : {};
+
+    sheet.appendRow([
+      new Date(),
+      p.first_name     || '',
+      p.last_name      || '',
+      p.email          || '',
+      p.phone          || '',
+      p.session_type   || '',
+      p.preferred_day  || '',
+      p.preferred_date || '',
+      p.message        || '',
+      'New'
+    ]);
+
+    // Email yourself a copy.
+    if (NOTIFY_EMAIL) {
+      var name = ((p.first_name || '') + ' ' + (p.last_name || '')).trim() || 'Someone';
+      var body =
+        'New booking request from your website.\n\n' +
+        'Name:      ' + name + '\n' +
+        'Email:     ' + (p.email || '-') + '\n' +
+        'Phone:     ' + (p.phone || '-') + '\n' +
+        'Session:   ' + (p.session_type || '-') + '\n' +
+        'Pref. day: ' + (p.preferred_day || '-') + '\n' +
+        'Pref date: ' + (p.preferred_date || '-') + '\n\n' +
+        'Their message:\n' + (p.message || '-') + '\n\n' +
+        '--\nFull log: ' + ss.getUrl();
+
+      MailApp.sendEmail({
+        to: NOTIFY_EMAIL,
+        subject: 'New Booking Request — ' + name,
+        body: body,
+        replyTo: p.email || NOTIFY_EMAIL
+      });
+    }
+
+    return ContentService
+      .createTextOutput(JSON.stringify({ result: 'success' }))
+      .setMimeType(ContentService.MimeType.JSON);
+
+  } catch (err) {
+    return ContentService
+      .createTextOutput(JSON.stringify({ result: 'error', message: err.toString() }))
+      .setMimeType(ContentService.MimeType.JSON);
+  } finally {
+    lock.releaseLock();
+  }
+}
+
+// Lets you confirm in a browser that the endpoint is alive.
+function doGet() {
+  return ContentService.createTextOutput('DM Imprints booking endpoint is running.');
+}
